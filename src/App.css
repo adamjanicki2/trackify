@@ -37,3 +37,20 @@ body {
     width: 144px;
     height: 144px;
 }
+
+.tracks-width {
+    width: 40%;
+}
+
+.pie-width {
+    width: 50%;
+}
+
+@media only screen and (max-width: 850px) {
+    .tracks-width {
+        width: 100%;
+    }
+    .pie-width {
+        width: 80%;
+    }
+}
