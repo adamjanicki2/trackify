@@ -1,7 +1,7 @@
 {
   "name": "trackify",
   "version": "0.1.0",
-  "homepage": "https://adamjanicki2.github.io/trackify",
+  "homepage": "http://adamjanicki2.github.io/trackify",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -48,6 +48,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^3.2.3"
   }
 }

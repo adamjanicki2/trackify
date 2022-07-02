@@ -11,7 +11,7 @@ const SCOPES = [
   "user-library-read",
   "playlist-read-private",
 ];
-const REDIRECT_URI = "http://localhost:3000";
+const REDIRECT_URI = "https://adamjanicki2.github.io/trackify";
 const PARAMS = {
   client_id: CLIENT_ID,
   response_type: "token",
