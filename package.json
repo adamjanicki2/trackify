@@ -2,7 +2,7 @@
   "name": "trackify",
   "version": "0.1.0",
   "homepage": "http://adamjanicki2.github.io/trackify",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
