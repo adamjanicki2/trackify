@@ -12,6 +12,7 @@ const SCOPES = [
   "playlist-read-private",
 ];
 const REDIRECT_URI = "https://adamjanicki2.github.io/trackify";
+// const REDIRECT_URI = "http://localhost:3000";
 const PARAMS = {
   client_id: CLIENT_ID,
   response_type: "token",
@@ -52,6 +53,27 @@ export default function Nav(props) {
                 About
               </a>
             </li>
+            {props.showData && (
+              <li className="nav-item">
+                <a className="nav-link me-lg-3" href="#tracks">
+                  Tracks
+                </a>
+              </li>
+            )}
+            {props.showData && (
+              <li className="nav-item">
+                <a className="nav-link me-lg-3" href="#artists">
+                  Artists
+                </a>
+              </li>
+            )}
+            {props.showData && (
+              <li className="nav-item">
+                <a className="nav-link me-lg-3" href="#spotipie">
+                  Spotipie
+                </a>
+              </li>
+            )}
           </ul>
           <button
             className="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0"

@@ -1,5 +1,7 @@
 export function retrieveAccessToken() {
-  const hash = window.location.hash;
+  const hash = window.location.href.slice(
+    window.location.href.lastIndexOf("#")
+  );
   const params = new URLSearchParams(hash.substring(1));
   const accessToken = params.get("access_token");
   return accessToken ?? undefined;

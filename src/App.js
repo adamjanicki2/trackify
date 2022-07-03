@@ -47,15 +47,19 @@ export default function App() {
 
   return (
     <div id="home">
-      <Nav loggedIn={accessToken || false} setAccessToken={setAccessToken} />
+      <Nav
+        loggedIn={accessToken || false}
+        setAccessToken={setAccessToken}
+        showData={accessToken || false}
+      />
       {topTracksRecent && <div className="mt5"> </div>}
-      <div id="toptracks" className="mt4">
+      <div id="tracks" className="mt4">
         {topTracksRecent && <TopTracks tracks={topTracksRecent} />}
       </div>
-      <div id="topartists">
+      <div id="artists">
         {topArtistsRecent && <TopArtists artists={topArtistsRecent} />}
       </div>
-      <div id="genrepiechart">
+      <div id="spotipie">
         {topArtistsRecent && <GenrePieChart artists={topArtistsRecent} />}
       </div>
       <Subnav />
