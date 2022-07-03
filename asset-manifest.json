@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/trackify/static/css/main.ea850886.css",
-    "main.js": "/trackify/static/js/main.978412b8.js",
+    "main.js": "/trackify/static/js/main.c72ab010.js",
     "index.html": "/trackify/index.html",
     "static/media/logo.svg": "/trackify/static/media/logo.571871d3c8dbf5de6e37a3a845d5254f.svg",
     "main.ea850886.css.map": "/trackify/static/css/main.ea850886.css.map",
-    "main.978412b8.js.map": "/trackify/static/js/main.978412b8.js.map"
+    "main.c72ab010.js.map": "/trackify/static/js/main.c72ab010.js.map"
   },
   "entrypoints": [
     "static/css/main.ea850886.css",
-    "static/js/main.978412b8.js"
+    "static/js/main.c72ab010.js"
   ]
 }
