@@ -1,5 +1,6 @@
 {
-  "name": "Trackify",
+  "short_name": "Trackify",
+  "name": "Spotify app",
   "icons": [
     {
       "src": "favicon.ico",

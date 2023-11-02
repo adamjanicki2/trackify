@@ -1,0 +1,140 @@
+:root {
+  --primary: black;
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    sans-serif;
+  --nav-padding: 5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.accent-hover {
+  transition: color 0.3s ease-in-out;
+}
+
+.accent-hover:hover {
+  color: var(--accent);
+}
+
+.nav {
+  background-color: inherit;
+  color: var(--nav-text);
+  background-color: #fff;
+  box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.06);
+  padding: 0 var(--nav-padding);
+}
+
+.navlink {
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+  display: inline-block;
+}
+
+.section {
+  padding: var(--nav-padding) var(--nav-padding) 0 var(--nav-padding);
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 2.75rem;
+}
+
+.m-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dim:hover {
+  opacity: 0.85;
+}
+
+button {
+  border: none;
+  background-color: #2a37f0;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #232ecc;
+}
+
+.copy-button {
+  background-color: transparent;
+  padding: 0.25rem;
+  border-radius: 100%;
+}
+
+.copy-button:hover {
+  background-color: #e0e0e0;
+}
+
+.bordering {
+  border: 2px solid orange;
+}
+
+.flex-imp {
+  display: flex !important;
+}
+
+.error {
+  color: #e7040f;
+}
+
+.success {
+  color: #006400;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2rem;
+  z-index: 10001;
+  width: max-content;
+  max-width: 80%;
+  transition: all 0.4s ease-in;
+}
+
+.alert-visible {
+  opacity: 1;
+}
+
+.alert-hidden {
+  opacity: 0;
+}

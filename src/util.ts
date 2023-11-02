@@ -8,7 +8,11 @@ export function retrieveAccessToken() {
 }
 
 const API_BASE = "https://api.spotify.com/v1";
-export async function makeApiRequest(endpoint, accessToken, args = {}) {
+export async function makeApiRequest(
+  endpoint: string,
+  accessToken: string,
+  args = {}
+) {
   const res = await fetch(
     `${API_BASE}${endpoint}?${new URLSearchParams(args)}`,
     {
@@ -20,26 +24,20 @@ export async function makeApiRequest(endpoint, accessToken, args = {}) {
   return await res.json();
 }
 
-/**
- *
- * @param {string} accessToken
- * @param {"short_term" | "medium_term" | "long_term"} timeFrame
- * @returns
- */
-export async function getTopTracks(accessToken, timeFrame = "short_term") {
+export async function getTopTracks(
+  accessToken: string,
+  timeFrame = "short_term"
+) {
   return await makeApiRequest("/me/top/tracks", accessToken, {
     limit: 50,
     time_range: timeFrame,
   });
 }
 
-/**
- *
- * @param {string} accessToken
- * @param {"short_term" | "medium_term" | "long_term"} timeFrame
- * @returns
- */
-export async function getTopArtists(accessToken, timeFrame = "short_term") {
+export async function getTopArtists(
+  accessToken: string,
+  timeFrame = "short_term"
+) {
   return await makeApiRequest("/me/top/artists", accessToken, {
     limit: 50,
     time_range: timeFrame,
