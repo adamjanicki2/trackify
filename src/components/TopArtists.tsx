@@ -19,7 +19,7 @@ function getCopyText(artists: any[]) {
 }
 
 export default function TopArtists() {
-  const { accessToken } = useAccessToken();
+  const { accessToken, setAccessToken } = useAccessToken();
   const { setAlert } = useAlert();
   const [artists, setArtists] = useState<any[]>([]);
 
@@ -34,10 +34,11 @@ export default function TopArtists() {
           type: "error",
           message: "Failed to fetch from Spotify API. Try signing in again.",
         });
+        setAccessToken(null);
       }
     };
     setup();
-  }, [accessToken, setAlert]);
+  }, [accessToken, setAlert, setAccessToken]);
 
   if (!artists || !artists.length) return null;
 

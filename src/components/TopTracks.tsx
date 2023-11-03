@@ -20,7 +20,7 @@ function getCopyText(tracks: any[]) {
 }
 
 export default function TopTracks() {
-  const { accessToken } = useAccessToken();
+  const { accessToken, setAccessToken } = useAccessToken();
   const { setAlert } = useAlert();
   const [tracks, setTracks] = useState<any[]>([]);
 
@@ -35,10 +35,11 @@ export default function TopTracks() {
           type: "error",
           message: "Failed to fetch from Spotify API. Try signing in again.",
         });
+        setAccessToken(null);
       }
     };
     setup();
-  }, [setAlert, accessToken]);
+  }, [setAlert, accessToken, setAccessToken]);
 
   if (!tracks || !tracks.length) return null;
 
