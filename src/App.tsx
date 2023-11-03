@@ -17,7 +17,7 @@ const App = () => {
       setAccessToken(hash.access_token);
       window.location.href = "/";
     }
-  }, []);
+  }, [setAccessToken]);
 
   return (
     <>

@@ -3,6 +3,7 @@ import CopyButton from "src/components/CopyButton";
 import useAccessToken from "src/hooks/useAccessToken";
 import useAlert from "src/hooks/useAlert";
 import { getTopTracks } from "src/util";
+import Image from "src/components/Image";
 
 const NUMBER_OF_TRACKS = 10;
 
@@ -37,7 +38,7 @@ export default function TopTracks() {
       }
     };
     setup();
-  }, []);
+  }, [setAlert, accessToken]);
 
   if (!tracks || !tracks.length) return null;
 
@@ -56,38 +57,34 @@ export default function TopTracks() {
         </div>
         <div className="flex flex-row flex-wrap justify-center m-auto">
           {tracks.slice(0, NUMBER_OF_TRACKS).map((track, index) => (
-            <a
-              href={track.external_urls.spotify}
-              target="_blank"
-              key={`toptrack${index}`}
-              rel="noreferrer"
-              className="no-underline black dim w-80"
-            >
-              <div className="flex flex-column items-center ma1">
-                <div className="flex flex-row items-center">
-                  <img
-                    src={track.album.images[0].url}
-                    className="br2"
-                    alt=""
-                    style={{ maxHeight: "60vh" }}
-                  />
-                </div>
-                <div className="flex flex-column tc">
-                  <div className="f4 fw4">{track.name}</div>
-                  <div className="f5 fw4">
-                    {track.artists
-                      .map((artist: any) => artist.name)
-                      .join(" & ")}
-                  </div>
-                  <div className="f5 fw3">
-                    {track.album.release_date.split("-")[0]}
-                  </div>
-                </div>
-              </div>
-            </a>
+            <Track track={track} rank={index + 1} key={`track${index}`} />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function Track({ track, rank }: { track: any; rank: number }) {
+  return (
+    <a
+      href={track.external_urls.spotify}
+      target="_blank"
+      rel="noreferrer"
+      className="no-underline black ma2"
+    >
+      <div className="flex flex-column items-center ba br2 b--light-gray">
+        <Image src={track.album.images[0].url} rank={rank} />
+        <div className="flex flex-column tc pv2">
+          <div className="f4 fw6">{track.name}</div>
+          <div className="f5 fw5 i">
+            {track.artists.map((artist: any) => artist.name).join(" & ")}
+          </div>
+          <div className="f5 fw5 dark-gray">
+            {track.album.release_date.split("-")[0]}
+          </div>
+        </div>
+      </div>
+    </a>
   );
 }

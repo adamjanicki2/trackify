@@ -107,9 +107,9 @@ const Nav = () => {
               <Navlink title="Tracks" onClose={closeMenu} />
               <Navlink title="Artists" onClose={closeMenu} />
               <Navlink title="Genres" onClose={closeMenu} />
+              <Navlink title="About" onClose={closeMenu} />
             </>
           )}
-          <Navlink title="About" onClose={closeMenu} />
           <Button
             type={isLoggedIn ? "logout" : "login"}
             setAccessToken={setAccessToken}
