@@ -33,7 +33,7 @@ export default function TopTracks() {
       } else {
         setAlert({
           type: "error",
-          message: "Failed to fetch from Spotify API",
+          message: "Failed to fetch from Spotify API. Try signing in again.",
         });
       }
     };

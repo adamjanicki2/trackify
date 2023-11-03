@@ -3,7 +3,10 @@ export default function About() {
     <section id="about">
       <div className="flex flex-change pa3 justify-around">
         <div className="flex flex-column items-center justify-center">
-          <h1 className="flex w-90 ma0 mb4 tc" style={{ fontSize: "4.5rem" }}>
+          <h1
+            className="flex w-90 ma0 mb4 tc"
+            style={{ fontSize: "calc(2.5rem + 4.5vh)" }}
+          >
             Your Music Visualized.
           </h1>
           <p className="dark-gray f4 fw4 w-90 mv0 pb4">

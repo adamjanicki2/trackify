@@ -4,6 +4,7 @@ import useAccessToken from "src/hooks/useAccessToken";
 import useAlert from "src/hooks/useAlert";
 import { getTopArtists } from "src/util";
 import Image from "src/components/Image";
+import Pie from "src/components/Pie";
 
 const NUMBER_OF_ARTISTS = 10;
 
@@ -31,7 +32,7 @@ export default function TopArtists() {
       } else {
         setAlert({
           type: "error",
-          message: "Failed to fetch from Spotify API",
+          message: "Failed to fetch from Spotify API. Try signing in again.",
         });
       }
     };
@@ -42,24 +43,27 @@ export default function TopArtists() {
 
   const copyText = getCopyText(artists);
   return (
-    <section id="artists">
-      <div className="flex flex-column gradient-two pa4">
-        <div className="flex items-center justify-center mb3">
-          <h1 className="mr2 mv0">Top Artists</h1>
-          <CopyButton
-            onClick={() => {
-              navigator.clipboard.writeText(copyText);
-              setAlert({ type: "success", message: "Copied top artists!" });
-            }}
-          />
+    <>
+      <section id="artists">
+        <div className="flex flex-column gradient-two pa4">
+          <div className="flex items-center justify-center mb3">
+            <h1 className="mr2 mv0">Top Artists</h1>
+            <CopyButton
+              onClick={() => {
+                navigator.clipboard.writeText(copyText);
+                setAlert({ type: "success", message: "Copied top artists!" });
+              }}
+            />
+          </div>
+          <div className="flex flex-row flex-wrap justify-center m-auto">
+            {artists.slice(0, NUMBER_OF_ARTISTS).map((artist, index) => (
+              <Artist artist={artist} rank={index + 1} key={`artist${index}`} />
+            ))}
+          </div>
         </div>
-        <div className="flex flex-row flex-wrap justify-center m-auto">
-          {artists.slice(0, NUMBER_OF_ARTISTS).map((artist, index) => (
-            <Artist artist={artist} rank={index + 1} key={`artist${index}`} />
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+      <Pie artists={artists} />
+    </>
   );
 }
 
