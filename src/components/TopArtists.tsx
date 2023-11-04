@@ -76,7 +76,10 @@ function Artist({ artist, rank }: { artist: any; rank: number }) {
       rel="noreferrer"
       className="no-underline black ma2"
     >
-      <div className="flex flex-column items-center ba br2 b--light-gray">
+      <div
+        className="flex flex-column items-center ba br2 b--light-gray"
+        style={{ maxWidth: 300 }}
+      >
         <Image src={artist.images[0].url} rank={rank} />
         <div className="flex flex-column tc pv2">
           <div className="f4 fw6">{artist.name}</div>

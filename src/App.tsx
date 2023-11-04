@@ -15,7 +15,7 @@ const App = () => {
     const hash = qs.parse(window.location.hash.slice(1));
     if (hash.access_token && typeof hash.access_token === "string") {
       setAccessToken(hash.access_token);
-      window.location.href = "/";
+      window.location.href = window.location.origin + window.location.pathname;
     }
   }, [setAccessToken]);
 

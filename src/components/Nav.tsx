@@ -13,13 +13,11 @@ const SCOPES = [
   "user-library-read",
   "playlist-read-private",
 ] as const;
-// const REDIRECT_URI = "https://adamjanicki.xyz/trackify";
-const REDIRECT_URI = "http://localhost:3000/trackify";
 
 const PARAMS = {
   client_id: CLIENT_ID,
   response_type: "token",
-  redirect_uri: REDIRECT_URI,
+  redirect_uri: window.location.href,
   scope: SCOPES.join(" "),
   show_dialog: true,
 } as const;
