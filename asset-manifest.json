@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/trackify/static/css/main.456e710b.css",
-    "main.js": "/trackify/static/js/main.671ab884.js",
+    "main.js": "/trackify/static/js/main.25c55f31.js",
     "static/media/cloud.svg": "/trackify/static/media/cloud.f19cee73146846a6fa2b602fbd166279.svg",
     "index.html": "/trackify/index.html"
   },
   "entrypoints": [
     "static/css/main.456e710b.css",
-    "static/js/main.671ab884.js"
+    "static/js/main.25c55f31.js"
   ]
 }
