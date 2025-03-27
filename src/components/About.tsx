@@ -17,7 +17,7 @@ export default function About() {
         </div>
         <div className="flex justify-center about-img">
           <img
-            src="https://source.unsplash.com/u8Jn2rzYIps/900x900"
+            src="/trackify/splash.webp"
             alt=""
             className="br-100"
             style={{ maxHeight: "75vh" }}

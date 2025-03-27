@@ -25,7 +25,12 @@ export default function Image({ src, rank }: Props) {
         src={src}
         alt=""
         className="br2 br--top"
-        style={{ width: IMG_SIZE, height: IMG_SIZE }}
+        style={{
+          width: IMG_SIZE,
+          height: IMG_SIZE,
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
       />
     </div>
   );
